@@ -11,6 +11,11 @@
 
     <groupId>com.sakura.common</groupId>
     <artifactId>s-registry</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
