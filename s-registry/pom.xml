@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <description>服务的注册中心</description>
     <groupId>com.sakura.common</groupId>
     <artifactId>s-registry</artifactId>
     <dependencies>
@@ -17,5 +18,6 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
     </dependencies>
+
 
 </project>
