@@ -15,6 +15,7 @@
     <modules>
         <module>s-item-interface</module>
         <module>s-item-service</module>
+        <module>s-item-upload</module>
     </modules>
     <!-- 打包方式为pom -->
     <packaging>pom</packaging>

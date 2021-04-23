@@ -47,14 +47,21 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+        <!--引入通用类-->
         <dependency>
-            <groupId>com.sakura.service</groupId>
-            <artifactId>s-item-interface</artifactId>
-            <version>${sakura.latest.version}</version>
+            <groupId>com.sakura.common</groupId>
+            <artifactId>s-common</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sakura.item</groupId>
+            <artifactId>s-item-interface</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
