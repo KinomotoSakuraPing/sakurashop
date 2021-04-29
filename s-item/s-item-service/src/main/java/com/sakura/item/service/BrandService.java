@@ -53,8 +53,21 @@ public class BrandService {
     @Transactional
     public void saveBrand(Brand brand, List<Long> cids) {
         // 新增品牌信息
-        this.brandMapper.insertSelective(brand);
+        this.brandMapper.insert(brand);
         // 新增品牌和分类中间表
+        cids.forEach(cid->brandMapper.insertCategoryBrand(cid,brand.getId()));
+    }
+    /**
+     * 修改品牌
+     * @param brand
+     * @param cids
+     */
+    @Transactional
+    public void updateBrand(Brand brand, List<Long> cids) {
+        // 修改品牌信息
+        this.brandMapper.updateByPrimaryKey(brand);
+        // 修改2品牌和分类中间表
+        this.brandMapper.deleteCategoryBrand(brand.getId());
         cids.forEach(cid->brandMapper.insertCategoryBrand(cid,brand.getId()));
     }
 
@@ -65,8 +78,9 @@ public class BrandService {
      */
     @Transactional
     public int deleteBrand(Long id) {
+        this.brandMapper.deleteByPrimaryKey(id);
         // 新增品牌信息
-        return this.brandMapper.deleteByPrimaryKey(id);
+        return this.brandMapper.deleteCategoryBrand(id);
         // 新增品牌和分类中间表
     }/**
      * 品牌
